@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="KUNAL KHARAT — Computer Science Student & Aspiring Software Developer. Portfolio showcasing projects, skills, and achievements." />
+  <title>KUNAL KHARAT · Software Developer</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts: Space Grotesk (display/UI) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════════
+       SCROLL PROGRESS BAR
+  ═══════════════════════════════════════════════ -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Primary navigation">
+    <div class="nav-container">
+
+      <!-- Logo / Monogram -->
+      <a href="#hero" class="nav-logo" aria-label="Home">
+        <span class="logo-bracket">&lt;</span>KK<span class="logo-bracket">/&gt;</span>
+      </a>
+
+      <!-- Desktop nav links -->
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+        <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
+        <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+        <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+        <li><a href="#achievements" class="nav-link" data-section="achievements">Achievements</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+      </ul>
+
+      <!-- CTA button (desktop) -->
+      <a href="#contact" class="nav-cta btn-primary" aria-label="Hire Me">Hire Me</a>
+
+
+      <!-- Hamburger (mobile) -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false"
+        aria-controls="navLinks">
+        <span class="ham-line"></span>
+        <span class="ham-line"></span>
+        <span class="ham-line"></span>
+      </button>
+
+    </div>
+  </nav>
+
+  <!-- Mobile menu overlay -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <ul role="list">
+      <li><a href="#about" class="mob-link">About</a></li>
+      <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
+      <li><a href="#skills" class="mob-link">Skills</a></li>
+      <li><a href="#projects" class="mob-link">Projects</a></li>
+      <li><a href="#achievements" class="mob-link">Achievements</a></li>
+      <li><a href="#contact" class="mob-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════════
+         HERO SECTION
+    ═══════════════════════════════════════════════ -->
+    <section id="hero" class="hero" aria-label="Hero">
+
+      <!-- Floating particle canvas -->
+      <canvas id="particleCanvas" aria-hidden="true"></canvas>
+
+      <!-- Decorative gradient orbs -->
+      <div class="orb orb-1" aria-hidden="true"></div>
+      <div class="orb orb-2" aria-hidden="true"></div>
+      <div class="orb orb-3" aria-hidden="true"></div>
+
+      <div class="hero-inner">
+
+        <!-- Profile photo -->
+        <div class="hero-image">
+          <div class="hero-image-glow" aria-hidden="true"></div>
+          <div class="hero-image-dots" aria-hidden="true"></div>
+          <div class="hero-image-outline" aria-hidden="true"></div>
+          <div class="hero-image-frame">
+            <img src="profile.png" alt="Kunal Kharat" class="hero-photo" />
+          </div>
+          <div class="hero-image-badge">
+            <span class="badge-dot" aria-hidden="true"></span>
+            <span class="badge-text">Open to<br />Internships</span>
+          </div>
+        </div>
+
+        <div class="hero-text">
+          <!-- Eyebrow label -->
+          <p class="hero-eyebrow">
+            <span class="eyebrow-dot"></span>
+            Available for Opportunities
+          </p>
+
+          <h1 class="hero-name">
+            Kunal<br />
+            <span class="name-gradient">Kharat</span>
+          </h1>
+
+          <!-- Typing animation target -->
+          <p class="hero-role">
+            <span class="role-prefix">I build </span>
+            <span class="typing-text" id="typingText" aria-live="polite"></span>
+            <span class="cursor" aria-hidden="true">|</span>
+          </p>
+
+          <p class="hero-tagline">
+            Computer Science student who turns complex problems into<br class="br-hide" />
+            clean, efficient code — from algorithms to web experiences.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn-primary ripple">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                aria-hidden="true">
+                <path d="M4 5h16M4 12h16M4 19h16" />
+              </svg>
+              View Projects
+            </a>
+            <a href="#contact" class="btn-outline ripple">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                aria-hidden="true">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.73a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16a2 2 0 0 1 .19.92z" />
+              </svg>
+              Contact Me
+            </a>
+            <a href="KunalKharat_Resume.pdf" target="_blank" class="btn-primary ripple">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                aria-hidden="true">
+                <path d="M4 5h16M4 12h16M4 19h16" />
+              </svg>
+              Download CV
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <div class="stat-value">
+                <span class="stat-num" data-target="2">0</span><span class="stat-suffix">+</span>
+              </div>
+              <span class="stat-label">Projects</span>
+            </div>
+
+            <div class="stat-divider" aria-hidden="true"></div>
+
+            <div class="stat">
+              <div class="stat-value">
+                <span class="stat-num" data-target="5">0</span><span class="stat-suffix">+</span>
+              </div>
+              <span class="stat-label">Certifications</span>
+            </div>
+
+            <div class="stat-divider" aria-hidden="true"></div>
+
+            <div class="stat">
+              <div class="stat-value">
+                <span class="stat-num" data-target="150">0</span><span class="stat-suffix">+</span>
+              </div>
+              <span class="stat-label">DSA Problems</span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator" aria-hidden="true">
+          <div class="scroll-dot"></div>
+        </div>
+
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         ABOUT SECTION
+    ═══════════════════════════════════════════════ -->
+    <section id="about" class="section" aria-label="About me">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <span class="section-label">Who I Am</span>
+          <h2 class="section-title">About <span class="text-gradient">Me</span></h2>
+        </div>
+
+        <div class="about-grid">
+
+          <div class="about-text reveal">
+            <p class="about-intro">
+              I am a Computer Science student with a strong interest in problem solving, software development,
+              and technology-driven innovation. My current focus is on strengthening my understanding of <em>Data
+                Structures & Algorithms</em> in C++ while building practical projects that transform theoretical
+              knowledge into real-world applications.
+            </p>
+            <p>
+              Beyond academics, I actively explore entrepreneurship, professional development, and emerging
+              technologies through projects, internships, and continuous learning.
+            </p>
+
+            <div class="strength-pills">
+              <span class="pill">Problem Solver</span>
+              <span class="pill">DSA Enthusiast</span>
+              <span class="pill">Fast Learner</span>
+              <span class="pill">Continuous Learning</span>
+              <span class="pill">Self-Motivated</span>
+            </div>
+          </div>
+
+          <div class="about-timeline reveal">
+            <h3 class="timeline-heading">Education</h3>
+
+            <div class="timeline">
+
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content glass-card">
+                  <span class="tl-year">2025 – Present</span>
+                  <h4>B.Tech — Computer Science & Engineering</h4>
+                  <p>Currently pursuing my undergraduate degree, maintaining a strong academic record with focus on data
+                    structures, algorithms, and software engineering principles.</p>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content glass-card">
+                  <span class="tl-year">2024 – 2025</span>
+                  <h4>Higher Secondary (12th) — PCM</h4>
+                  <p>Completed Higher Secondary education in PCM, building a strong analytical mindset and disciplined
+                    approach through competitive exam preparation.</p>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-dot tl-dot-accent"></div>
+                <div class="timeline-content glass-card">
+                  <span class="tl-year">Career Vision</span>
+                  <h4>Technology & Entrepreneurship</h4>
+                  <p>Focused on developing strong computer science fundamentals, software engineering skills, and
+                    entrepreneurial thinking to create meaningful technology solutions.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════
+     EXPERIENCE SECTION
+═══════════════════════════════════════════════ -->
+    <section id="experience" class="section section-alt" aria-label="Experience">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <span class="section-label">Where I've Worked</span>
+          <h2 class="section-title">
+            Experience <span class="text-gradient">& Work</span>
+          </h2>
+        </div>
+
+        <div class="experience-list">
+
+          <!-- Experience 1 -->
+          <article class="experience-card glass-card reveal">
+
+            <div class="experience-marker">
+              <div class="experience-dot"></div>
+            </div>
+
+            <div class="experience-content">
+
+              <div class="experience-header">
+                <div>
+                  <span class="experience-date">JUNE 2026 – JULY 2026</span>
+
+                  <h3>C++ Programmer Intern</h3>
+
+                  <span class="experience-company">
+                    Navodita Intotech
+                  </span>
+                </div>
+
+                <span class="experience-type">
+                  Internship
+                </span>
+              </div>
+
+              <p class="experience-description">
+                Worked on C++ programming tasks with a focus on logical problem-solving and coding
+                fundamentals.
+              </p>
+
+              <ul class="experience-points">
+                <li>Developed programming solutions using C++</li>
+                <li>Applied algorithms and problem-solving techniques</li>
+                <li>Improved code structure and debugging skills</li>
+              </ul>
+
+              <div class="experience-tags">
+                <span>C++</span>
+                <span>DSA</span>
+                <span>Problem Solving</span>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- Experience 2 -->
+          <article class="experience-card glass-card reveal">
+
+            <div class="experience-marker">
+              <div class="experience-dot"></div>
+            </div>
+
+            <div class="experience-content">
+
+              <div class="experience-header">
+                <div>
+                  <span class="experience-date">JUNE 2026 – JULY 2026</span>
+
+                  <h3>C++ Programmer Intern</h3>
+
+                  <span class="experience-company">
+                    InternPe
+                  </span>
+                </div>
+
+                <span class="experience-type">
+                  Internship
+                </span>
+              </div>
+
+              <p class="experience-description">
+                Worked on C++ programming tasks while strengthening problem-solving and programming
+                skills.
+              </p>
+
+              <ul class="experience-points">
+                <li>Developed solutions using C++</li>
+                <li>Applied problem-solving and algorithmic concepts</li>
+                <li>Practiced writing efficient and structured code</li>
+              </ul>
+
+              <div class="experience-tags">
+                <span>C++</span>
+                <span>DSA</span>
+                <span>Git</span>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- Experience 3 -->
+          <article class="experience-card glass-card reveal">
+
+            <div class="experience-marker">
+              <div class="experience-dot"></div>
+            </div>
+
+            <div class="experience-content">
+
+              <div class="experience-header">
+                <div>
+                  <span class="experience-date">APRIL 2026</span>
+
+                  <h3>TechOps — Event Coordinator</h3>
+
+                  <span class="experience-company">
+                    Rotaract Club, Walchand College of Engineering
+                  </span>
+                </div>
+
+                <span class="experience-type">
+                  Event Coordination
+                </span>
+              </div>
+
+              <p class="experience-description">
+                Coordinated TechOps, a technical event organized by the Rotaract Club, contributing to event planning,
+                coordination, and smooth execution.
+              </p>
+
+              <ul class="experience-points">
+                <li>Coordinated with participants and organizing team</li>
+                <li>Assisted in planning and executing technical activities</li>
+                <li>Managed event logistics and on-ground coordination</li>
+              </ul>
+
+              <div class="experience-tags">
+                <span>Event Management</span>
+                <span>Team Coordination</span>
+                <span>Communication</span>
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         SKILLS SECTION
+    ═══════════════════════════════════════════════ -->
+    <section id="skills" class="section section-alt" aria-label="Skills">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <span class="section-label">What I Know</span>
+          <h2 class="section-title">Technical <span class="text-gradient">Skills</span></h2>
+        </div>
+
+        <div class="skills-grid">
+
+          <!-- Skill Card: C++ -->
+          <div class="skill-card glass-card reveal" role="article">
+            <div class="skill-icon">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="30"
+                height="30">
+                <text x="2" y="29" font-size="21" font-family="arial, sans-serif" font-weight="700"
+                  fill="url(#cppGradient)">C++</text>
+                <defs>
+                  <linearGradient id="cppGradient" x1="0" y1="0" x2="40" y2="40">
+                    <stop offset="0%" stop-color="#00d4ff" />
+                    <stop offset="100%" stop-color="#a855f7" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <h3>C++</h3>
+            <p>Core language for algorithms, competitive programming, and systems-level thinking.</p>
+            <div class="skill-bar-wrap" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"
+              aria-label="C++ proficiency 80%">
+              <div class="skill-bar" data-width="80"></div>
+            </div>
+            <span class="skill-pct">80%</span>
+          </div>
+
+          <!-- Skill Card: DSA -->
+          <div class="skill-card glass-card reveal" role="article">
+            <div class="skill-icon">
+              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="32"
+                height="32">
+                <path d="M16 7V13M16 13L8 19M16 13L24 19M8 19V25M24 19V25" stroke="url(#dsaGradient)" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" />
+
+                <!-- Nodes -->
+                <circle cx="16" cy="5" r="3" fill="url(#dsaGradient)" />
+                <circle cx="8" cy="19" r="3" fill="url(#dsaGradient)" />
+                <circle cx="24" cy="19" r="3" fill="url(#dsaGradient)" />
+                <circle cx="8" cy="27" r="3" fill="url(#dsaGradient)" />
+                <circle cx="24" cy="27" r="3" fill="url(#dsaGradient)" />
+
+                <defs>
+                  <linearGradient id="dsaGradient" x1="0" y1="0" x2="32" y2="32">
+                    <stop offset="0%" stop-color="#00d4ff" />
+                    <stop offset="100%" stop-color="#a855f7" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <h3>Data Structures & Algorithms</h3>
+            <p>Arrays, trees, graphs, dynamic programming — solving 150+ problems across platforms.</p>
+            <div class="skill-bar-wrap" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
+              aria-label="DSA proficiency 75%">
+              <div class="skill-bar" data-width="75"></div>
+            </div>
+            <span class="skill-pct">75%</span>
+          </div>
+
+          <!-- Skill Card: OOP -->
+          <div class="skill-card glass-card reveal" role="article">
+            <div class="skill-icon">
+              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="32"
+                height="32">
+                <!-- Class -->
+                <rect x="3" y="4" width="18" height="11" rx="2" stroke="url(#oopGradient)" stroke-width="1.8" />
+
+                <path d="M3 8h18" stroke="url(#oopGradient)" stroke-width="1.5" />
+
+                <path d="M7 6h5" stroke="url(#oopGradient)" stroke-width="1.5" stroke-linecap="round" />
+
+                <!-- Object -->
+                <rect x="11" y="18" width="18" height="10" rx="2" stroke="url(#oopGradient)" stroke-width="1.8" />
+
+                <!-- Relationship -->
+                <path d="M19 15v3" stroke="url(#oopGradient)" stroke-width="1.8" stroke-linecap="round" />
+
+                <path d="M17 16l2 2 2-2" stroke="url(#oopGradient)" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+
+                <defs>
+                  <linearGradient id="oopGradient" x1="0" y1="0" x2="32" y2="32">
+                    <stop offset="0%" stop-color="#00d4ff" />
+                    <stop offset="100%" stop-color="#a855f7" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <h3>Object-Oriented Programming (OOP)</h3>
+            <p>Applying encapsulation, inheritance, polymorphism, and abstraction to structure maintainable code.</p>
+            <div class="skill-bar-wrap" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
+              aria-label="Object-Oriented Programming proficiency 80%">
+              <div class="skill-bar" data-width="80"></div>
+            </div>
+            <span class="skill-pct">80%</span>
+          </div>
+
+
+          <!-- Skill Card: Python -->
+          <div class="skill-card glass-card reveal" role="article">
+            <div class="skill-icon">
+              <img src="https://cdn.simpleicons.org/python" alt="" width="32" height="32">
+            </div>
+            <h3>Python</h3>
+            <p>Versatile language for scripting, automation, problem solving, and building practical applications.</p>
+            <div class="skill-bar-wrap" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
+              aria-label="Python proficiency 85%">
+              <div class="skill-bar" data-width="85"></div>
+            </div>
+            <span class="skill-pct">85%</span>
+          </div>
+
+          <!-- Skill Card: HTML -->
+          <div class="skill-card glass-card reveal" role="article">
+            <div class="skill-icon">
+              <img src="https://cdn.simpleicons.org/html5" alt="" width="32" height="32">
+            </div>
+            <h3>HTML5</h3>
+            <p>Semantic, accessible markup — building solid structural foundations for web pages.</p>
+            <div class="skill-bar-wrap" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"
+              aria-label="HTML proficiency 90%">
+              <div class="skill-bar" data-width="90"></div>
+            </div>
+            <span class="skill-pct">90%</span>
+          </div>
+
+          <!-- Skill Card: CSS -->
+          <div class="skill-card glass-card reveal" role="article">
+            <div class="skill-icon">
+              <img src="https://cdn.simpleicons.org/css" alt="" width="32" height="32">
+            </div>
+            <h3>CSS3</h3>
+            <p>Flexbox, Grid, animations, custom properties — crafting beautiful, responsive layouts.</p>
+            <div class="skill-bar-wrap" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"
+              aria-label="CSS proficiency 85%">
+              <div class="skill-bar" data-width="85"></div>
+            </div>
+            <span class="skill-pct">85%</span>
+          </div>
+
+          <!-- Skill Card: JavaScript -->
+          <div class="skill-card glass-card reveal" role="article">
+            <div class="skill-icon">
+              <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="32" height="32">
+
+                <rect width="32" height="32" rx="4" fill="url(#jsGradient)" />
+
+                <text x="5" y="24" font-size="18" font-family="Arial, sans-serif" font-weight="700" fill="#ffffff">
+                  JS
+                </text>
+
+                <defs>
+                  <linearGradient id="jsGradient" x1="0" y1="0" x2="32" y2="32">
+                    <stop offset="0%" stop-color="#00d4ff" />
+                    <stop offset="100%" stop-color="#a855f7" />
+                  </linearGradient>
+                </defs>
+
+              </svg>
+            </div>
+            <h3>JavaScript</h3>
+            <p>DOM manipulation, async patterns, ES6+ — building interactive and dynamic web experiences.</p>
+            <div class="skill-bar-wrap" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"
+              aria-label="JavaScript proficiency 60%">
+              <div class="skill-bar" data-width="60"></div>
+            </div>
+            <span class="skill-pct">60%</span>
+          </div>
+
+          <!-- Skill Card: Git -->
+          <div class="skill-card glass-card reveal" role="article">
+            <div class="skill-icon">
+              <img src="https://cdn.simpleicons.org/git" alt="" width="32" height="32">
+            </div>
+            <h3>Git & GitHub</h3>
+            <p>Version control, branching strategies, collaboration workflows, and open-source contributions.</p>
+            <div class="skill-bar-wrap" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"
+              aria-label="Git proficiency 80%">
+              <div class="skill-bar" data-width="80"></div>
+            </div>
+            <span class="skill-pct">80%</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ═══════════════════════════════════════════════
+         PROFESSIONAL SKILLS SECTION
+    ═══════════════════════════════════════════════ -->
+    <section id="skills" class="section" aria-label="Professional Skills">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <span class="section-label">How I Work</span>
+          <h2 class="section-title">
+            Professional <span class="text-gradient">Skills</span>
+          </h2>
+        </div>
+
+        <div class="skills-grid">
+
+          <!-- Skill Card: Problem Solving -->
+          <div class="skill-card glass-card reveal" role="article">
+            <div class="skill-icon">
+              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="32"
+                height="32">
+
+                <path
+                  d="M5 7h9v4a3 3 0 1 0 6 0V7h7v8h-4a3 3 0 1 0 0 6h4v4H17v-4a3 3 0 1 0-6 0v4H5v-9h4a3 3 0 1 0 0-6H5V7z"
+                  stroke="url(#problemGradient)" stroke-width="1.8" stroke-linejoin="round" />
+
+                <defs>
+                  <linearGradient id="problemGradient" x1="0" y1="0" x2="32" y2="32">
+                    <stop offset="0%" stop-color="#00d4ff" />
+                    <stop offset="100%" stop-color="#a855f7" />
+                  </linearGradient>
+                </defs>
+
+              </svg>
+            </div>
+            <h3>Problem Solving</h3>
+            <p>Analytical thinking, breaking down complex problems, and building elegant algorithmic solutions.</p>
+            <div class="skill-bar-wrap" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"
+              aria-label="Problem solving proficiency 85%">
+              <div class="skill-bar" data-width="85"></div>
+            </div>
+            <span class="skill-pct">85%</span>
+          </div>
+
+          <!-- Skill Card: Team Collaboration -->
+          <div class="skill-card glass-card reveal" role="article">
+            <div class="skill-icon">
+              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="32"
+                height="32">
+
+                <!-- Center person -->
+                <circle cx="16" cy="9" r="4" stroke="url(#teamGradient)" stroke-width="1.8" />
+
+                <path d="M10 25c0-4 2.5-7 6-7s6 3 6 7" stroke="url(#teamGradient)" stroke-width="1.8"
+                  stroke-linecap="round" />
+
+                <!-- Left person -->
+                <circle cx="7" cy="12" r="3" stroke="url(#teamGradient)" stroke-width="1.6" />
+
+                <path d="M2.5 25c0-3.2 1.8-5.5 4.5-5.5" stroke="url(#teamGradient)" stroke-width="1.6"
+                  stroke-linecap="round" />
+
+                <!-- Right person -->
+                <circle cx="25" cy="12" r="3" stroke="url(#teamGradient)" stroke-width="1.6" />
+
+                <path d="M29.5 25c0-3.2-1.8-5.5-4.5-5.5" stroke="url(#teamGradient)" stroke-width="1.6"
+                  stroke-linecap="round" />
+
+                <defs>
+                  <linearGradient id="teamGradient" x1="0" y1="0" x2="32" y2="32">
+                    <stop offset="0%" stop-color="#00d4ff" />
+                    <stop offset="100%" stop-color="#a855f7" />
+                  </linearGradient>
+                </defs>
+
+              </svg>
+            </div>
+
+            <h3>Team Collaboration</h3>
+
+            <p>
+              Working effectively with peers on technical projects, events, and shared goals.
+            </p>
+
+            <div class="skill-bar-wrap" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"
+              aria-label="Team Collaboration proficiency 70%">
+              <div class="skill-bar" data-width="70"></div>
+            </div>
+
+            <span class="skill-pct">70%</span>
+          </div>
+
+
+          <!-- Skill Card: Communication -->
+          <div class="skill-card glass-card reveal" role="article">
+            <div class="skill-icon">
+              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="32"
+                height="32">
+
+                <path d="M27 17a3 3 0 0 1-3 3H11l-6 5v-5a3 3 0 0 1-2-3V7a3 3 0 0 1 3-3h18a3 3 0 0 1 3 3v10z"
+                  stroke="url(#communicationGradient)" stroke-width="1.8" stroke-linejoin="round" />
+
+                <circle cx="10" cy="12" r="1.2" fill="url(#communicationGradient)" />
+
+                <circle cx="16" cy="12" r="1.2" fill="url(#communicationGradient)" />
+
+                <circle cx="22" cy="12" r="1.2" fill="url(#communicationGradient)" />
+
+                <defs>
+                  <linearGradient id="communicationGradient" x1="0" y1="0" x2="32" y2="32">
+                    <stop offset="0%" stop-color="#00d4ff" />
+                    <stop offset="100%" stop-color="#a855f7" />
+                  </linearGradient>
+                </defs>
+
+              </svg>
+            </div>
+
+            <h3>Communication</h3>
+
+            <p>
+              Clear technical writing, documentation, and presenting ideas
+              to both technical and non-technical audiences.
+            </p>
+
+            <div class="skill-bar-wrap" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"
+              aria-label="Communication proficiency 65%">
+              <div class="skill-bar" data-width="65"></div>
+            </div>
+
+            <span class="skill-pct">65%</span>
+          </div>
+
+          <!-- Skill Card: Adaptability -->
+          <div class="skill-card glass-card reveal" role="article">
+            <div class="skill-icon">
+              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="32"
+                height="32">
+
+                <path d="M7 11a10 10 0 0 1 16-3l2 2" stroke="url(#adaptGradient)" stroke-width="2"
+                  stroke-linecap="round" />
+
+                <path d="M25 21a10 10 0 0 1-16 3l-2-2" stroke="url(#adaptGradient)" stroke-width="2"
+                  stroke-linecap="round" />
+
+                <path d="M25 6v4h-4" stroke="url(#adaptGradient)" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+
+                <path d="M7 26v-4h4" stroke="url(#adaptGradient)" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+
+                <defs>
+                  <linearGradient id="adaptGradient" x1="0" y1="0" x2="32" y2="32">
+                    <stop offset="0%" stop-color="#00d4ff" />
+                    <stop offset="100%" stop-color="#a855f7" />
+                  </linearGradient>
+                </defs>
+
+              </svg>
+            </div>
+
+            <h3>Adaptability</h3>
+
+            <p>
+              Quickly learning new tools, concepts, and workflows when working on unfamiliar problems.
+            </p>
+
+            <div class="skill-bar-wrap" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"
+              aria-label="Adaptability proficiency 80%">
+              <div class="skill-bar" data-width="80"></div>
+            </div>
+
+            <span class="skill-pct">80%</span>
+          </div>
+
+          <!-- Skill Card: Continuous Learning -->
+          <div class="skill-card glass-card reveal" role="article">
+            <div class="skill-icon">
+              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="32"
+                height="32">
+
+                <path d="M5 6.5C8.5 5 12.5 5.5 16 8v18c-3.5-2.5-7.5-3-11-1.5v-18z" stroke="url(#learningGradient)"
+                  stroke-width="1.8" stroke-linejoin="round" />
+
+                <path d="M27 6.5C23.5 5 19.5 5.5 16 8v18c3.5-2.5 7.5-3 11-1.5v-18z" stroke="url(#learningGradient)"
+                  stroke-width="1.8" stroke-linejoin="round" />
+
+                <path d="M16 8v18" stroke="url(#learningGradient)" stroke-width="1.8" />
+
+                <path d="M9 11h4M9 15h4" stroke="url(#learningGradient)" stroke-width="1.4" stroke-linecap="round" />
+
+                <defs>
+                  <linearGradient id="learningGradient" x1="0" y1="0" x2="32" y2="32">
+                    <stop offset="0%" stop-color="#00d4ff" />
+                    <stop offset="100%" stop-color="#a855f7" />
+                  </linearGradient>
+                </defs>
+
+              </svg>
+            </div>
+
+            <h3>Continuous Learning</h3>
+
+            <p>
+              Consistently building technical depth through projects, problem solving, and hands-on practice.
+            </p>
+
+            <div class="skill-bar-wrap" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"
+              aria-label="Continuous Learning proficiency 90%">
+              <div class="skill-bar" data-width="90"></div>
+            </div>
+
+            <span class="skill-pct">90%</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         PROJECTS SECTION
+    ═══════════════════════════════════════════════ -->
+    <section id="projects" class="section" aria-label="Projects">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <span class="section-label">What I've Built</span>
+          <h2 class="section-title">Featured <span class="text-gradient">Projects</span></h2>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- Project 1: Portfolio -->
+          <article class="project-card glass-card reveal">
+            <div class="project-thumb" data-label="Portfolio">
+              <img src="Documents/portfolio-preview.png" alt="Preview of Personal Portfolio Website"
+                class="project-preview">
+              <div class="project-overlay">
+                <span class="project-num">01</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Personal Portfolio Website</h3>
+              <p class="project-desc">A fully responsive, dark-themed developer portfolio with glassmorphism design,
+                particle animations, and smooth scroll effects. Built entirely with vanilla web technologies.</p>
+              <div class="project-tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">JavaScript</span>
+              </div>
+              <div class="project-links">
+                <a href="#" target="_blank"
+                  class="btn-ghost ripple" aria-label="View Portfolio source on GitHub">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                  </svg>
+                  GitHub
+                </a>
+                <a href="#" target="_blank"
+                  class="btn-primary btn-sm ripple" aria-label="View Portfolio live demo">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    aria-hidden="true">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                  </svg>
+                  Live Demo
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: Amazon Homepage Clone -->
+          <article class="project-card glass-card reveal">
+            <div class="project-thumb" data-label="Game">
+              <img src="Documents/amazon-clone-preview.png" alt="Preview of Amazon Homepage Clone"
+                class="project-preview">
+              <div class="project-overlay">
+                <span class="project-num">02</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Amazon Homepage Clone</h3>
+              <p class="project-desc">A responsive recreation of the Amazon homepage, built to practice web layout,
+                styling, navigation elements, and frontend design using HTML and CSS.</p>
+              <div class="project-tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+              </div>
+              <div class="project-links">
+                <a href="#" target="_blank" class="btn-ghost ripple"
+                  aria-label="View Amazon Homepage Clone source on GitHub">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                  </svg>
+                  GitHub
+                </a>
+                <a href="#" target="_blank" class="btn-primary btn-sm ripple"
+                  aria-label="View Amazon Homepage Clone live">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    aria-hidden="true">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                  </svg>
+                  Live Demo
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: Tic Tac Toe -->
+          <!-- <article class="project-card glass-card reveal">
+            <div class="project-thumb" data-label="Game">
+              <div class="project-thumb-art art-ttt" aria-hidden="true">
+                <div class="ttt-grid">
+                  <span>X</span><span></span><span>O</span>
+                  <span></span><span>X</span><span></span>
+                  <span>O</span><span></span><span>X</span>
+                </div>
+              </div>
+              <div class="project-overlay">
+                <span class="project-num">03</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Tic Tac Toe Game</h3>
+              <p class="project-desc">Two-player and vs-AI Tic Tac Toe with win detection, draw handling, animated
+                winner highlight, and score persistence. Clean minimal UI with smooth transitions.</p>
+              <div class="project-tags">
+                <span class="tag">JavaScript</span>
+                <span class="tag">Minimax AI</span>
+                <span class="tag">CSS Grid</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn-ghost ripple" aria-label="View Tic Tac Toe source on GitHub">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                  </svg>
+                  GitHub
+                </a>
+                <a href="#" class="btn-primary btn-sm ripple" aria-label="Play Tic Tac Toe live">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    aria-hidden="true">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                  </svg>
+                  Live Demo
+                </a>
+              </div>
+            </div>
+          </article> -->
+
+          <!-- Project 4: To Do App -->
+          <!-- <article class="project-card glass-card reveal">
+            <div class="project-thumb" data-label="Productivity">
+              <div class="project-thumb-art art-todo" aria-hidden="true">
+                <div class="todo-item todo-done">✓ Design the UI</div>
+                <div class="todo-item todo-done">✓ Write the logic</div>
+                <div class="todo-item">○ Deploy to GitHub</div>
+              </div>
+              <div class="project-overlay">
+                <span class="project-num">04</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">To Do Application</h3>
+              <p class="project-desc">Feature-rich task manager with add/edit/delete, priority labels, local storage
+                persistence, filter by status, and a satisfying check-off animation. No frameworks.</p>
+              <div class="project-tags">
+                <span class="tag">JavaScript</span>
+                <span class="tag">Local Storage</span>
+                <span class="tag">CRUD</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn-ghost ripple" aria-label="View To Do App source on GitHub">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                  </svg>
+                  GitHub
+                </a>
+                <a href="#" class="btn-primary btn-sm ripple" aria-label="View To Do App live demo">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    aria-hidden="true">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                  </svg>
+                  Live Demo
+                </a>
+              </div>
+            </div>
+          </article> -->
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         ACHIEVEMENTS SECTION
+    ═══════════════════════════════════════════════ -->
+    <section id="achievements" class="section section-alt" aria-label="Achievements">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <span class="section-label">Milestones</span>
+          <h2 class="section-title">Achievements & <span class="text-gradient">Recognition</span></h2>
+        </div>
+
+        <!-- Animated counters row -->
+        <div class="counters-row reveal">
+          <div class="counter-item glass-card">
+            <span class="counter-val" data-target="150">0</span>
+            <span class="counter-plus">+</span>
+            <span class="counter-label">DSA Problems Solved</span>
+          </div>
+          <div class="counter-item glass-card">
+            <span class="counter-val" data-target="5">0</span>
+            <span class="counter-plus">+</span>
+            <span class="counter-label">Certifications Earned</span>
+          </div>
+          <div class="counter-item glass-card">
+            <span class="counter-val" data-target="2">0</span>
+            <span class="counter-plus">+</span>
+            <span class="counter-label">Projects Completed</span>
+          </div>
+          <div class="counter-item glass-card">
+            <span class="counter-val" data-target="1">0</span>
+            <span class="counter-plus">+</span>
+            <span class="counter-label">Internship Completed</span>
+          </div>
+          <div class="counter-item glass-card">
+            <span class="counter-val">1st</span>
+            <span class="counter-label">SCHOOL RANK</span>
+            <span class="counter-label">10TH SSC • 95.40%</span>
+          </div>
+          <div class="counter-item glass-card">
+            <span class="counter-val">1st</span>
+            <span class="counter-label">SCIENCE DEPARTMENT</span>
+            <span class="counter-label">12TH • 83%</span>
+          </div>
+        </div>
+
+        <!-- Badges grid -->
+        <div class="badges-grid">
+
+          <div class="badge-card glass-card reveal">
+            <div class="badge-icon badge-intern">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="36"
+                height="36">
+
+                <text x="3" y="27" font-size="20" font-family="Arial, Helvetica, sans-serif" font-weight="700"
+                  fill="url(#cppAchievement1)">
+                  C++
+                </text>
+
+                <path d="M29 11v9" stroke="url(#cppAchievement1)" stroke-width="2" stroke-linecap="round" />
+
+                <path d="M25 15h8" stroke="url(#cppAchievement1)" stroke-width="2" stroke-linecap="round" />
+
+                <defs>
+                  <linearGradient id="cppAchievement1" x1="0" y1="0" x2="40" y2="40">
+                    <stop offset="0%" stop-color="#00d4ff" />
+                    <stop offset="100%" stop-color="#a855f7" />
+                  </linearGradient>
+                </defs>
+
+              </svg>
+            </div>
+            <div class="badge-info">
+              <h4>C++ Programming Internship</h4>
+              <span class="badge-org">Navodita Intotech · 2026</span>
+              <p>Completed a C++ programming internship focused on strengthening programming fundamentals, problem
+                solving, and practical coding skills.</p>
+
+              <a href="Documents/Navodita_Certificate.jpg" target="_blank" rel="noopener noreferrer"
+                class="badge-proof">
+                View Certificate
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  aria-hidden="true">
+                  <path d="M7 17L17 7" />
+                  <path d="M7 7h10v10" />
+                </svg>
+              </a>
+            </div>
+            <div class="badge-ribbon" aria-hidden="true">Certified</div>
+          </div>
+
+          <div class="badge-card glass-card reveal">
+            <div class="badge-icon badge-cert">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="36"
+                height="36">
+
+                <!-- Certificate -->
+                <rect x="4" y="5" width="32" height="25" rx="3" stroke="url(#cppAchievement2)" stroke-width="2" />
+
+                <!-- C++ -->
+                <text x="8" y="22" font-size="14" font-family="Arial, Helvetica, sans-serif" font-weight="700"
+                  fill="url(#cppAchievement2)">
+                  C++
+                </text>
+
+                <!-- Certificate seal -->
+                <circle cx="29" cy="28" r="6" fill="url(#cppAchievement2)" opacity="0.9" />
+
+                <path d="M27 28l1.5 1.5L31.5 26" stroke="#0a0a0f" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+
+                <defs>
+                  <linearGradient id="cppAchievement2" x1="0" y1="0" x2="40" y2="40">
+                    <stop offset="0%" stop-color="#00d4ff" />
+                    <stop offset="100%" stop-color="#a855f7" />
+                  </linearGradient>
+                </defs>
+
+              </svg>
+            </div>
+            <div class="badge-info">
+              <h4>C++ Programming Internship</h4>
+              <span class="badge-org">InternPe · 2026</span>
+              <p>Completed a C++ programming internship focused on programming fundamentals, problem solving, and
+                developing practical coding skills.</p>
+              <a href="Documents/InternPe_Certificate.png" target="_blank" rel="noopener noreferrer"
+                class="badge-proof">
+                View Certificate
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  aria-hidden="true">
+                  <path d="M7 17L17 7" />
+                  <path d="M7 7h10v10" />
+                </svg>
+              </a>
+            </div>
+            <div class="badge-ribbon" aria-hidden="true">Certified</div>
+          </div>
+
+          <div class="badge-card glass-card reveal">
+            <div class="badge-icon badge-dsa">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="36"
+                height="36">
+
+                <!-- Code brackets -->
+                <path d="M14 10L6 20l8 10" stroke="url(#leetcodeGradient)" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+
+                <path d="M26 10l8 10-8 10" stroke="url(#leetcodeGradient)" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+
+                <!-- Slash -->
+                <path d="M23 7L17 33" stroke="url(#leetcodeGradient)" stroke-width="2.5" stroke-linecap="round" />
+
+                <!-- Streak indicator -->
+                <circle cx="31" cy="8" r="5" fill="url(#leetcodeGradient)" />
+
+                <text x="28.2" y="10.5" font-size="6" font-family="Arial, Helvetica, sans-serif" font-weight="700"
+                  fill="#0a0a0f">
+                  50
+                </text>
+
+                <defs>
+                  <linearGradient id="leetcodeGradient" x1="0" y1="0" x2="40" y2="40">
+                    <stop offset="0%" stop-color="#00d4ff" />
+                    <stop offset="100%" stop-color="#a855f7" />
+                  </linearGradient>
+                </defs>
+
+              </svg>
+            </div>
+            <div class="badge-info">
+              <h4>50-Day LeetCode Badge</h4>
+              <span class="badge-org">LeetCode · Ongoing</span>
+              <p>Maintained a 50-day problem-solving streak on LeetCode through consistent algorithmic practice.</p>
+              <a href="https://leetcode.com/u/KunalKharat77/" target="_blank" rel="noopener noreferrer"
+                class="badge-proof">
+                View Profile
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  aria-hidden="true">
+                  <path d="M7 17L17 7" />
+                  <path d="M7 7h10v10" />
+                </svg>
+              </a>
+            </div>
+            <div class="badge-ribbon" aria-hidden="true">Active</div>
+          </div>
+
+          <div class="badge-card glass-card reveal">
+            <div class="badge-icon badge-award">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="36"
+                height="36">
+
+                <!-- Trophy cup -->
+                <path d="M12 6H28V14C28 20 24.5 24 20 24C15.5 24 12 20 12 14V6Z" stroke="url(#awardGradient)"
+                  stroke-width="2" stroke-linejoin="round" fill="url(#awardGradient)" fill-opacity="0.12" />
+
+                <!-- Left handle -->
+                <path d="M12 9H7V13C7 17 9 19 13 19" stroke="url(#awardGradient)" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" />
+
+                <!-- Right handle -->
+                <path d="M28 9H33V13C33 17 31 19 27 19" stroke="url(#awardGradient)" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" />
+
+                <!-- Trophy stem -->
+                <path d="M20 24V30" stroke="url(#awardGradient)" stroke-width="2.5" stroke-linecap="round" />
+
+                <!-- Trophy base / bottom handle -->
+                <path d="M14 30H26" stroke="url(#awardGradient)" stroke-width="2.5" stroke-linecap="round" />
+
+                <path d="M11 34H29" stroke="url(#awardGradient)" stroke-width="2.5" stroke-linecap="round" />
+
+                <!-- Small connection to base -->
+                <path d="M15 30C15 32 14 34 11 34M25 30C25 32 26 34 29 34" stroke="url(#awardGradient)" stroke-width="2"
+                  stroke-linecap="round" />
+
+                <defs>
+                  <linearGradient id="awardGradient" x1="0" y1="0" x2="40" y2="40">
+                    <stop offset="0%" stop-color="#00d4ff" />
+                    <stop offset="100%" stop-color="#a855f7" />
+                  </linearGradient>
+                </defs>
+
+              </svg>
+            </div>
+            <div class="badge-info">
+              <h4>Walchand Imagine Cup 2026 Finalist</h4>
+              <span class="badge-org">Walchand College of Engineering · 2026</span>
+              <p>Selected as a finalist in Walchand College of Engineering's Imagine Cup competition for developing and
+                presenting an innovative startup idea.</p>
+              <a href="Documents/WIC_Certificate.jpg" target="_blank" rel="noopener noreferrer" class="badge-proof">
+                View Certificate
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  aria-hidden="true">
+                  <path d="M7 17L17 7" />
+                  <path d="M7 7h10v10" />
+                </svg>
+              </a>
+            </div>
+            <div class="badge-ribbon" aria-hidden="true">Finalist</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         CONTACT SECTION
+    ═══════════════════════════════════════════════ -->
+    <section id="contact" class="section" aria-label="Contact">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <span class="section-label">Get In Touch</span>
+          <h2 class="section-title">Let's <span class="text-gradient">Connect</span></h2>
+          <p class="section-sub">Whether it's an internship, a collaboration, or just a conversation about tech — my
+            inbox is always open.</p>
+        </div>
+
+        <div class="contact-grid">
+
+          <div class="contact-info reveal">
+            <div class="contact-item glass-card">
+              <div class="ci-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"
+                  aria-hidden="true">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </div>
+              <div>
+                <span class="ci-label">Email</span>
+                <a href="mailto:kunalkharat2008@gmail.com" class="ci-value">kunalkharat2008@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact-item glass-card">
+              <div class="ci-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+              </div>
+              <div>
+                <span class="ci-label">GitHub</span>
+                <a href="https://github.com/KunalKharat77" target="_blank" rel="noopener noreferrer"
+                  class="ci-value">github.com/KunalKharat77</a>
+              </div>
+            </div>
+            <div class="contact-item glass-card">
+              <div class="ci-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
+                  <path
+                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
+              </div>
+              <div>
+                <span class="ci-label">LinkedIn</span>
+                <a href="https://www.linkedin.com/in/kunal-kharat-cse" target="_blank" rel="noopener noreferrer"
+                  class="ci-value">linkedin.com/in/kunal-kharat-cse</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <form class="contact-form glass-card reveal" id="contactForm" novalidate aria-label="Contact form">
+            <div class="form-group">
+              <label for="formName">Name</label>
+              <input type="text" id="formName" name="name" placeholder="Your name" autocomplete="name" required
+                aria-required="true" />
+              <span class="field-error" id="nameError" role="alert" aria-live="polite"></span>
+            </div>
+            <div class="form-group">
+              <label for="formEmail">Email</label>
+              <input type="email" id="formEmail" name="email" placeholder="your@email.com" autocomplete="email" required
+                aria-required="true" />
+              <span class="field-error" id="emailError" role="alert" aria-live="polite"></span>
+            </div>
+            <div class="form-group">
+              <label for="formMessage">Message</label>
+              <textarea id="formMessage" name="message"
+                placeholder="Tell me about the opportunity, project, or just say hi..." rows="5" required
+                aria-required="true"></textarea>
+              <span class="field-error" id="msgError" role="alert" aria-live="polite"></span>
+            </div>
+            <button type="submit" class="btn-primary btn-full ripple" id="submitBtn">
+              <span class="btn-text">Send Message</span>
+              <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" aria-hidden="true">
+                <line x1="22" y1="2" x2="11" y2="13" />
+                <polygon points="22 2 15 22 11 13 2 9 22 2" />
+              </svg>
+            </button>
+            <div class="form-success" id="formSuccess" role="alert" aria-live="polite" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                aria-hidden="true">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              Message sent! I'll get back to you soon.
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+
+        <a href="#hero" class="footer-logo">
+          <span class="logo-bracket">&lt;</span>KK<span class="logo-bracket">/&gt;</span>
+        </a>
+
+        <p class="footer-tagline">Computer Science Student | Lifelong Learner | Problem Solver</p>
+
+        <nav class="footer-social" aria-label="Social media links">
+          <!-- GitHub -->
+          <a href="https://github.com/KunalKharat77" target="_blank" rel="noopener noreferrer" class="social-link"
+            aria-label="GitHub profile">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+            </svg>
+          </a>
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/kunal-kharat-cse" target="_blank" rel="noopener noreferrer"
+            class="social-link" aria-label="LinkedIn profile">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+          </a>
+          <!-- Email -->
+          <a href="mailto:kunalkharat2008@gmail.com" class="social-link" aria-label="Send email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"
+              aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+          </a>
+        </nav>
+
+        <p class="footer-copy">
+          &copy; <span id="year"></span> Kunal Kharat. All rights reserved.
+        </p>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18"
+      aria-hidden="true">
+      <polyline points="18 15 12 9 6 15" />
+    </svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
