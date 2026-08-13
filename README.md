@@ -6,7 +6,7 @@ The portfolio showcases my education, experience, technical skills, internships,
 
 ## 🌐 Live Portfolio
 
-[View Live Portfolio](https://KunalKharat77.github.io/Personal-Portfolio-Website/)
+[View Live Portfolio](https://personal-portfolio-website-lime-zeta.vercel.app/)
 
 ---
 
@@ -223,7 +223,7 @@ Since this project uses vanilla HTML, CSS, and JavaScript, no build tool or fram
 
 1. Clone the repository
 
-git clone https://github.com/KunalKharat77/portfolio-website.git
+git clone "git clone "https://github.com/KunalKharat77/Personal-Portfolio-Website.git"
 
 2. Open the project
 
