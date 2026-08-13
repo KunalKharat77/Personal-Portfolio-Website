@@ -1581,7 +1581,7 @@ input:focus, textarea:focus, button:focus-visible { outline: 2px solid var(--cya
 .counter-label {
   display:       block;
   font-size:     0.78rem;
-  color:         var(--text-3);
+  color: #a8a8bd;
   letter-spacing:0.08em;
   text-transform:uppercase;
   margin-top:    0.5rem;

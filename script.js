@@ -430,34 +430,59 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 
   // Field validators
   const validators = {
-    name: v => v.trim().length >= 2 ? '' : 'Please enter your name (at least 2 characters).',
-    email: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) ? '' : 'Please enter a valid email address.',
-    msg: v => v.trim().length >= 10 ? '' : 'Please write a message (at least 10 characters).',
+    name: v =>
+      v.trim().length >= 2
+        ? ''
+        : 'Please enter your name (at least 2 characters).',
+
+    email: v =>
+      /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim())
+        ? ''
+        : 'Please enter a valid email address.',
+
+    msg: v =>
+      v.trim().length >= 10
+        ? ''
+        : 'Please write a message (at least 10 characters).',
   };
 
   // Live validation on blur
   const validate = (input, errorEl, key) => {
     const err = validators[key](input.value);
+
     errorEl.textContent = err;
     input.parentElement.classList.toggle('error', !!err);
+
     return !err;
   };
 
-  nameInput.addEventListener('blur', () => validate(nameInput, nameError, 'name'));
-  emailInput.addEventListener('blur', () => validate(emailInput, emailError, 'email'));
-  msgInput.addEventListener('blur', () => validate(msgInput, msgError, 'msg'));
+  nameInput.addEventListener('blur', () =>
+    validate(nameInput, nameError, 'name')
+  );
+
+  emailInput.addEventListener('blur', () =>
+    validate(emailInput, emailError, 'email')
+  );
+
+  msgInput.addEventListener('blur', () =>
+    validate(msgInput, msgError, 'msg')
+  );
 
   // Clear error on input
   [nameInput, emailInput, msgInput].forEach(input => {
     input.addEventListener('input', () => {
       const errorEl = input.parentElement.querySelector('.field-error');
-      if (errorEl) { errorEl.textContent = ''; }
+
+      if (errorEl) {
+        errorEl.textContent = '';
+      }
+
       input.parentElement.classList.remove('error');
     });
   });
 
   // Submit
-  form.addEventListener('submit', e => {
+  form.addEventListener('submit', async e => {
     e.preventDefault();
 
     const validName = validate(nameInput, nameError, 'name');
@@ -465,30 +490,66 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
     const validMsg = validate(msgInput, msgError, 'msg');
 
     if (!validName || !validEmail || !validMsg) {
-      // Focus first error
-      if (!validName) nameInput.focus();
-      else if (!validEmail) emailInput.focus();
-      else msgInput.focus();
+      if (!validName) {
+        nameInput.focus();
+      } else if (!validEmail) {
+        emailInput.focus();
+      } else {
+        msgInput.focus();
+      }
+
       return;
     }
 
-    // Simulate sending (replace with real fetch/FormData if needed)
     const btnText = submitBtn.querySelector('.btn-text');
+
     submitBtn.disabled = true;
-    if (btnText) btnText.textContent = 'Sending…';
 
-    setTimeout(() => {
-      // Success state
-      form.reset();
+    if (btnText) {
+      btnText.textContent = 'Sending…';
+    }
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        form.reset();
+
+        submitBtn.disabled = false;
+
+        if (btnText) {
+          btnText.textContent = 'Send Message';
+        }
+
+        successEl.setAttribute('aria-hidden', 'false');
+
+        setTimeout(() => {
+          successEl.setAttribute('aria-hidden', 'true');
+        }, 5000);
+
+      } else {
+        throw new Error('Form submission failed');
+      }
+
+    } catch (error) {
+      console.error('Form submission error:', error);
+
       submitBtn.disabled = false;
-      if (btnText) btnText.textContent = 'Send Message';
-      successEl.setAttribute('aria-hidden', 'false');
 
-      // Hide success after 5 s
-      setTimeout(() => {
-        successEl.setAttribute('aria-hidden', 'true');
-      }, 5000);
-    }, 1400);
+      if (btnText) {
+        btnText.textContent = 'Send Message';
+      }
+
+      alert(
+        'Something went wrong. Please try again or contact me directly by email.'
+      );
+    }
   });
 })();
 
