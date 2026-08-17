@@ -86,7 +86,9 @@ portfolio-website/
 ├── Documents
 │   ├── WIC_Certificate.jpg
 │   ├── Navodita_Certificate.jpg
-│   └── InternPe_Certificate.png
+│   ├── InternPe_Certificate.png
+│   ├── amazon-clone-preview.png
+│   └── portfolio-preview.png
 │
 └── README.md
 ```
